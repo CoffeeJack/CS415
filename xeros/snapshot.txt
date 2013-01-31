@@ -1,0 +1,25 @@
+in signaling process B
+syskill 3 return code = 0
+signaling process B exiting...
+---------------------
+
+read 7 return code = -128
+create handler 3 return code = 0
+syscreate function at 9210
+trap!
+exception 13 (general protection violation)
+Address of sp 129d4 value of sp 12a18
+eflags 8 CS: 2717 eip 0
+error code 0000cbf9 (52217)
+register dump:
+eax 00001f10 (7952)
+ecx 00001f50 (8016)
+edx 0000ca80 (51840)
+ebx 00012a0c (76300)
+esp 00012a0c (76300)
+ebp 00002710 (10000)
+esi 00000004 (4)
+edi 0000000d (13)
+
+Halting.....
+ß

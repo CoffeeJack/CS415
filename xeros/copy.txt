@@ -1,0 +1,25 @@
+in kmalloc
+printing queue...
+pid = 1
+pid = 3
+after PID = 1
+PID 3: created
+ticks = 400
+in adding to sleep queue
+empty sleep queue!
+duration = 400
+printing queue...
+pid = 1
+PID 3: Process Created!!
+ticks = 500
+in adding to sleep queue
+duration = 500
+printing queue...
+pid = 1
+pid = 3
+need idle process
+in idle
+PID 3: Sleep for 0 ms
+PID 3: Sleep stopped, now exiting...
+---------------------
+ß

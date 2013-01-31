@@ -1,0 +1,208 @@
+/*********************
+ * CPSC 415
+ * Due: Nov 6, 2012
+ * Assignment 02
+ * By: Vincent Tsui
+ * ID: 67221069
+ *********************/
+
+/* user.c : User processes
+ */
+
+#include <xeroskernel.h>
+
+/* Your code goes here */
+
+/************************************
+ * function name: root
+ * require: 
+ * return:
+ * comment: see A02 extended producer/consumer problem for behaviors
+*************************************/
+
+extern void root( void ){    
+    
+    int pid = sysgetpid();
+    char* str;
+    int* process_4 = 6;
+    int process_3 = 5;
+    int msg = 0;
+    int sleep_time[4] = {10000,7000,20000,27000};
+//      
+    sprintf(str,"PID %d: Root Process Created!!\n",pid);
+        
+    sysputs(str);
+    
+    syscreate(process_a,8000);
+    sysputs("PID 1: Created Process PID 3\n");
+    
+    syscreate(process_b,8000);
+    sysputs("PID 1: Created Process PID 4\n");
+    
+    syscreate(process_c,8000);
+    sysputs("PID 1: Created Process PID 5\n");
+    
+    syscreate(process_d,8000);
+    sysputs("PID 1: Created Process PID 6\n");
+    
+    syssleep(6000);
+    
+    syssend(3,&sleep_time[0],sizeof(sleep_time[0]));
+    
+    syssend(4,&sleep_time[1],sizeof(sleep_time[1]));
+    
+    syssend(5,&sleep_time[2],sizeof(sleep_time[2]));
+    
+    syssend(6,&sleep_time[3],sizeof(sleep_time[3]));
+    
+    sprintf(str,"PID 1: Receiving from Process 4 (PID6): Status = %d\n",sysrecv(&process_4,&msg,sizeof(msg)));
+    sysputs(str);
+//    
+    sprintf(str,"PID 1: Sending to Process 3 (PID5): Status = %d\n",syssend(process_3,&msg,sizeof(msg)));
+    sysputs(str);
+    
+    //while(1);
+    
+    sysputs("Root ending...\n");
+    
+}
+
+/************************************
+ * function name: process_a
+ * require: 
+ * return:
+ * comment: see A02 extended producer/consumer problem for behaviors
+*************************************/
+
+extern void process_a(void){
+    
+    int pid = sysgetpid();
+    unsigned int* root_pid = 1;
+    int msg = 0;
+    char* str;
+    
+    sprintf(str,"PID %d: Process Created!!\n",pid);
+    sysputs(str);
+    
+    syssleep(5000);
+    
+    sysrecv(&root_pid,&msg,sizeof(msg));
+    
+    sprintf(str,"PID %d: Sleep for %d ms\n",pid,msg);
+    sysputs(str);
+    
+    syssleep(msg);
+    
+    sprintf(str,"PID %d: Sleep stopped, now exiting...\n",pid);
+    sysputs(str);
+    
+    //sysstop();
+}
+
+/************************************
+ * function name: process_b
+ * require: 
+ * return:
+ * comment: see A02 extended producer/consumer problem for behaviors
+*************************************/
+
+extern void process_b(void){
+   
+    int pid = sysgetpid();
+    int* root_pid = 1;
+    int msg = 0;
+    char* str;
+    
+    sprintf(str,"PID %d: Process Created!!\n",pid);
+    sysputs(str);
+    
+    syssleep(5000);
+    
+    sysrecv(&root_pid,&msg,sizeof(msg));
+    
+    sprintf(str,"PID %d: Sleep for %d ms\n",pid,msg);
+    sysputs(str);
+    
+    syssleep(msg);
+    
+    sprintf(str,"PID %d: Sleep stopped, now exiting...\n",pid);
+    sysputs(str);
+}
+
+/************************************
+ * function name: process_c
+ * require: 
+ * return:
+ * comment: see A02 extended producer/consumer problem for behaviors
+*************************************/
+
+extern void process_c(void){
+
+    int pid = sysgetpid();
+    int* root_pid = 1;
+    int msg = 0;
+    char* str;
+    
+    sprintf(str,"PID %d: Process Created!!\n",pid);
+    sysputs(str);
+    
+    syssleep(5000);
+    
+    sysrecv(&root_pid,&msg,sizeof(msg));
+    
+    sprintf(str,"PID %d: Sleep for %d ms\n",pid,msg);
+    sysputs(str);
+    
+    syssleep(msg);
+    
+    sprintf(str,"PID %d: Sleep stopped, now exiting...\n",pid);
+    sysputs(str);
+}
+
+/************************************
+ * function name: process_d
+ * require: 
+ * return:
+ * comment: see A02 extended producer/consumer problem for behaviors
+*************************************/
+
+extern void process_d(void){
+
+    int pid = sysgetpid();
+    int* root_pid = 1;
+    int msg = 0;
+    char* str;
+    
+    sprintf(str,"PID %d: Process Created!!\n",pid);
+    sysputs(str);
+    
+    syssleep(5000);
+    
+    sysrecv(&root_pid,&msg,sizeof(msg));
+    
+    sprintf(str,"PID %d: Sleep for %d ms\n",pid,msg);
+    sysputs(str);
+    
+    syssleep(msg);
+    
+    sprintf(str,"PID %d: Sleep stopped, now exiting...\n",pid);
+    sysputs(str);
+}
+
+/************************************
+ * function name: idleproc
+ * require: 
+ * return:
+ * comment: this process will run when no process is in ready queue
+*************************************/
+
+extern void idleproc( void ){
+    
+    int count = 0;
+    
+    while(1){
+        //count++;
+        //if(count%100==0)sysputs("in idle\n");
+        __asm__ __volatile__("hlt");
+    }
+}

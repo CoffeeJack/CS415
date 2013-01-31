@@ -1,0 +1,243 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configurationDescriptor version="84">
+  <logicalFolder name="root" displayName="root" projectFiles="true" kind="ROOT">
+    <df name="xeros" root=".">
+      <df name="boot">
+        <df name="boot">
+          <in>bootsect.S</in>
+          <in>head.S</in>
+          <in>setup.S</in>
+        </df>
+        <df name="zBoot">
+          <in>crypt.h</in>
+          <in>gzip.h</in>
+          <in>head.S</in>
+          <in>inflate.c</in>
+          <in>lzw.h</in>
+          <in>misc.c</in>
+          <in>piggyback.c</in>
+          <in>segment.h</in>
+          <in>unzip.c</in>
+        </df>
+        <in>build.c</in>
+      </df>
+      <df name="c">
+        <in>create.c</in>
+        <in>ctsw.c</in>
+        <in>device.c</in>
+        <in>disp.c</in>
+        <in>evec.c</in>
+        <in>i386.c</in>
+        <in>init.c</in>
+        <in>intr.S</in>
+        <in>kbd.c</in>
+        <in>kprintf.c</in>
+        <in>mem.c</in>
+        <in>msg.c</in>
+        <in>signal.c</in>
+        <in>sleep.c</in>
+        <in>startup.S</in>
+        <in>syscall.c</in>
+        <in>user.c</in>
+        <in>xint.s</in>
+      </df>
+      <df name="compile">
+        <in>evec.s</in>
+      </df>
+      <df name="h">
+        <in>i386.h</in>
+        <in>icu.h</in>
+        <in>icu.s</in>
+        <in>kbd.h</in>
+        <in>misc.h</in>
+        <in>tty.h</in>
+        <in>xerosctype.h</in>
+        <in>xeroskernel.h</in>
+        <in>xeroslib.h</in>
+      </df>
+      <df name="lib">
+        <df name="libxc">
+          <in>abs.c</in>
+          <in>atof.c</in>
+          <in>atoi.c</in>
+          <in>atol.c</in>
+          <in>blkcopy.s</in>
+          <in>bzero.c</in>
+          <in>ctype_.c</in>
+          <in>doprnt.c</in>
+          <in>doscan.c</in>
+          <in>ecvt.c</in>
+          <in>fgets.c</in>
+          <in>fprintf.c</in>
+          <in>fprintf.s</in>
+          <in>fputs.c</in>
+          <in>gets.c</in>
+          <in>index.c</in>
+          <in>memset.c</in>
+          <in>printf.c</in>
+          <in>puts.c</in>
+          <in>qsort.c</in>
+          <in>rand.c</in>
+          <in>rindex.c</in>
+          <in>scanf.c</in>
+          <in>sprintf.c</in>
+          <in>strcat.c</in>
+          <in>strcmp.c</in>
+          <in>strcpy.c</in>
+          <in>strlen.c</in>
+          <in>strncat.c</in>
+          <in>strncmp.c</in>
+          <in>strncpy.c</in>
+          <in>swab.c</in>
+        </df>
+      </df>
+    </df>
+    <logicalFolder name="ExternalFiles"
+                   displayName="Important Files"
+                   projectFiles="false"
+                   kind="IMPORTANT_FILES_FOLDER">
+      <itemPath>Makefile</itemPath>
+    </logicalFolder>
+  </logicalFolder>
+  <sourceFolderFilter>^(nbproject)$</sourceFolderFilter>
+  <sourceRootList>
+    <Elem>.</Elem>
+  </sourceRootList>
+  <projectmakefile>Makefile</projectmakefile>
+  <confs>
+    <conf name="Default" type="0">
+      <toolsSet>
+        <remote-sources-mode>LOCAL_SOURCES</remote-sources-mode>
+        <compilerSet>default</compilerSet>
+      </toolsSet>
+      <codeAssistance>
+      </codeAssistance>
+      <makefileType>
+        <makeTool>
+          <buildCommandWorkingDir>.</buildCommandWorkingDir>
+          <buildCommand>${MAKE} -f Makefile</buildCommand>
+          <cleanCommand>${MAKE} -f Makefile clean</cleanCommand>
+          <executablePath></executablePath>
+          <cTool>
+            <preprocessorList>
+              <Elem>__ASSEMBLY__</Elem>
+              <Elem>__KERNEL__</Elem>
+            </preprocessorList>
+          </cTool>
+        </makeTool>
+      </makefileType>
+      <item path="boot/boot/bootsect.S" ex="true" tool="4" flavor2="0">
+      </item>
+      <item path="boot/boot/head.S" ex="true" tool="4" flavor2="0">
+      </item>
+      <item path="boot/boot/setup.S" ex="true" tool="4" flavor2="0">
+      </item>
+      <item path="boot/build.c" ex="true" tool="0" flavor2="0">
+      </item>
+      <item path="boot/zBoot/head.S" ex="true" tool="4" flavor2="0">
+      </item>
+      <item path="boot/zBoot/piggyback.c" ex="true" tool="0" flavor2="0">
+      </item>
+      <item path="c/intr.S" ex="true" tool="4" flavor2="0">
+      </item>
+      <item path="c/startup.S" ex="true" tool="4" flavor2="0">
+      </item>
+      <item path="c/xint.s" ex="true" tool="4" flavor2="0">
+      </item>
+      <item path="compile/evec.s" ex="true" tool="4" flavor2="0">
+      </item>
+      <folder path="xeros/boot">
+        <cTool>
+          <preprocessorList>
+            <Elem>STDC_HEADERS</Elem>
+          </preprocessorList>
+        </cTool>
+      </folder>
+      <folder path="xeros/c">
+        <cTool>
+          <incDir>
+            <pElem>compile</pElem>
+            <pElem>h</pElem>
+          </incDir>
+          <preprocessorList>
+            <Elem>BSDURG</Elem>
+            <Elem>PRINTERR</Elem>
+            <Elem>VERBOSE</Elem>
+          </preprocessorList>
+        </cTool>
+      </folder>
+      <item path="h/icu.s" ex="true" tool="4" flavor2="0">
+      </item>
+      <item path="h/misc.h" ex="true" tool="3" flavor2="0">
+      </item>
+      <item path="h/tty.h" ex="true" tool="3" flavor2="0">
+      </item>
+      <item path="h/xerosctype.h" ex="true" tool="3" flavor2="0">
+      </item>
+      <item path="lib/libxc/abs.c" ex="true" tool="0" flavor2="0">
+      </item>
+      <item path="lib/libxc/atof.c" ex="true" tool="0" flavor2="0">
+      </item>
+      <item path="lib/libxc/atoi.c" ex="true" tool="0" flavor2="0">
+      </item>
+      <item path="lib/libxc/atol.c" ex="true" tool="0" flavor2="0">
+      </item>
+      <item path="lib/libxc/blkcopy.s" ex="true" tool="4" flavor2="0">
+      </item>
+      <item path="lib/libxc/bzero.c" ex="true" tool="0" flavor2="0">
+      </item>
+      <item path="lib/libxc/ctype_.c" ex="true" tool="0" flavor2="0">
+      </item>
+      <item path="lib/libxc/doprnt.c" ex="true" tool="0" flavor2="0">
+      </item>
+      <item path="lib/libxc/doscan.c" ex="true" tool="0" flavor2="0">
+      </item>
+      <item path="lib/libxc/ecvt.c" ex="true" tool="0" flavor2="0">
+      </item>
+      <item path="lib/libxc/fgets.c" ex="true" tool="0" flavor2="0">
+      </item>
+      <item path="lib/libxc/fprintf.c" ex="true" tool="0" flavor2="0">
+      </item>
+      <item path="lib/libxc/fprintf.s" ex="true" tool="4" flavor2="0">
+      </item>
+      <item path="lib/libxc/fputs.c" ex="true" tool="0" flavor2="0">
+      </item>
+      <item path="lib/libxc/gets.c" ex="true" tool="0" flavor2="0">
+      </item>
+      <item path="lib/libxc/index.c" ex="true" tool="0" flavor2="0">
+      </item>
+      <item path="lib/libxc/memset.c" ex="true" tool="0" flavor2="0">
+      </item>
+      <item path="lib/libxc/printf.c" ex="true" tool="0" flavor2="0">
+      </item>
+      <item path="lib/libxc/puts.c" ex="true" tool="0" flavor2="0">
+      </item>
+      <item path="lib/libxc/qsort.c" ex="true" tool="0" flavor2="0">
+      </item>
+      <item path="lib/libxc/rand.c" ex="true" tool="0" flavor2="0">
+      </item>
+      <item path="lib/libxc/rindex.c" ex="true" tool="0" flavor2="0">
+      </item>
+      <item path="lib/libxc/scanf.c" ex="true" tool="0" flavor2="0">
+      </item>
+      <item path="lib/libxc/sprintf.c" ex="true" tool="0" flavor2="0">
+      </item>
+      <item path="lib/libxc/strcat.c" ex="true" tool="0" flavor2="0">
+      </item>
+      <item path="lib/libxc/strcmp.c" ex="true" tool="0" flavor2="0">
+      </item>
+      <item path="lib/libxc/strcpy.c" ex="true" tool="0" flavor2="0">
+      </item>
+      <item path="lib/libxc/strlen.c" ex="true" tool="0" flavor2="0">
+      </item>
+      <item path="lib/libxc/strncat.c" ex="true" tool="0" flavor2="0">
+      </item>
+      <item path="lib/libxc/strncmp.c" ex="true" tool="0" flavor2="0">
+      </item>
+      <item path="lib/libxc/strncpy.c" ex="true" tool="0" flavor2="0">
+      </item>
+      <item path="lib/libxc/swab.c" ex="true" tool="0" flavor2="0">
+      </item>
+    </conf>
+  </confs>
+</configurationDescriptor>
